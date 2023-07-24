@@ -8,5 +8,6 @@
 // For those boands, use usb detection instead.
 // #define SPLIT_USB_DETECT
 #define TAPPING_TERM 175
+#define ENCODER_RESOLUTION 2
 
 #include "keys.h"

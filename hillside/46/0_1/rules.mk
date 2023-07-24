@@ -4,6 +4,7 @@ CAPS_WORD_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
 COMBO_ENABLE = yes
+MOUSEKEY_ENABLE = yes
 
 # If you add a haptic board,
 # enable it and set its driver here or in your keymap folder
