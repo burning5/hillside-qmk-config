@@ -44,15 +44,15 @@ enum {
 
 void dance_ccp (tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-      tap_code(KC_LCTL);
+      register_code(KC_LCTL);
       tap_code(KC_V);
       unregister_code(KC_LCTL);
     } else if (state->count == 2) {
-      tap_code(KC_LCTL);
+      register_code(KC_LCTL);
       tap_code(KC_C);
       unregister_code(KC_LCTL);
     } else if (state->count == 3) {
-      tap_code(KC_LCTL);
+      register_code(KC_LCTL);
       tap_code(KC_X);
       unregister_code(KC_LCTL);
     } else {
@@ -62,16 +62,15 @@ void dance_ccp (tap_dance_state_t *state, void *user_data) {
 
 void dance_lbkt (tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-      tap_code(KC_LSFT);
+      register_code(KC_LSFT);
       tap_code(KC_9);
       unregister_code(KC_LSFT);
     } else if (state->count == 2) {
-      tap_code(KC_LSFT);
+      register_code(KC_LSFT);
       tap_code(KC_LEFT_BRACKET);
       unregister_code(KC_LSFT);
     } else if (state->count == 3) {
-      register_code(KC_LEFT_BRACKET);
-      unregister_code(KC_LEFT_BRACKET);
+      tap_code(KC_LEFT_BRACKET);
     } else {
       reset_tap_dance (state);
     }
@@ -79,16 +78,15 @@ void dance_lbkt (tap_dance_state_t *state, void *user_data) {
 
 void dance_rbkt (tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-      tap_code(KC_LSFT);
+      register_code(KC_LSFT);
       tap_code(KC_0);
       unregister_code(KC_LSFT);
     } else if (state->count == 2) {
-      tap_code(KC_RSFT);
+      register_code(KC_RSFT);
       tap_code(KC_RIGHT_BRACKET);
       unregister_code(KC_RSFT);
     } else if (state->count == 3) {
-      register_code(KC_RIGHT_BRACKET);
-      unregister_code(KC_RIGHT_BRACKET);
+      tap_code(KC_RIGHT_BRACKET);
     } else {
       reset_tap_dance (state);
     }
