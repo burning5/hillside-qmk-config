@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_LAYER1] = LAYOUT(
   __XX__,  KP_EXC,  KP_AT_,  KP_HSH,  KP_DLR,  KP_PCT,                      KP_CRT,  KP_AMP,  KP_AST,  KP_UND,  KP_EQL,  __XX__,
-  __XX__,  KP_SFT,  KP_GRV,  KP_TID,  TD_LPR,  KP_LBK,                      KP_RBK,  TD_RPR,  __XX__,  KP_BSL,  KP_SFT,  __XX__,
+  __XX__,  KP_SFT,  KP_GRV,  KP_TID,  TD_LPR,  KP_LBK,                      KP_RBK,  TD_RPR,  KP_PIP,  KP_BSL,  KP_SFT,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_APS,  KP_KMI,  __XX__,    CP_WRD,  KP_PLS,  KP_DQT,  KP_ALT,  KP_GUI,  KP_CTL,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  MO_CFG,    _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_
   ),

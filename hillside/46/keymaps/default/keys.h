@@ -44,6 +44,7 @@
 #define KP_APS KC_QUOT
 #define KP_MIN KC_MINS
 #define KP_DQT KC_DQUO
+#define KP_PIP KC_PIPE
 
 #define KP_PSC KC_PSCR
 #define KP_SLK KC_SCRL
