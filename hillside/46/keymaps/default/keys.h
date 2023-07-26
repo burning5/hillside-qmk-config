@@ -80,13 +80,13 @@
 #define OS_SCP SGUI(KC_S)
 
 #define MT_A__ LSFT_T(KC_A)
-#define MT_SMC RSFT_T(KC_SCLN)
+#define MT_SMC LSFT_T(KC_SCLN)
 #define MT_Z__ LCTL_T(KC_Z)
 #define MT_X__ LGUI_T(KC_X)
 #define MT_C__ LALT_T(KC_C)
-#define MT_CMA RALT_T(KC_COMM)
-#define MT_DOT RGUI_T(KC_DOT)
-#define MT_SLS RCTL_T(KC_SLSH)
+#define MT_CMA LALT_T(KC_COMM)
+#define MT_DOT LGUI_T(KC_DOT)
+#define MT_SLS LCTL_T(KC_SLSH)
 
 // tap dances
 #define TD_1__ TD(TD_1)
