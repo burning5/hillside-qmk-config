@@ -1,19 +1,10 @@
 #include QMK_KEYBOARD_H
 
-#define _LAYER0 0
-#define _LAYER1 1
-#define _LAYER2 2
-#define _LAYER3 3
-#define _LAYER4 4
-
-enum custom_keycodes {
-  LAYER0 = SAFE_RANGE,
-  LAYER1,
-  LAYER2,
-  LAYER3,
-  LAYER4,
-};
-
+#define L_DEF 0
+#define L_SYM 1
+#define L_NAV 2
+#define L_FNC 3
+#define L_CFG 4
 
 // Tap Dance declarations
 enum {
@@ -39,7 +30,8 @@ enum {
   COMBO_TAB,
   COMBO_DEL,
   COMBO_BACKSPACE,
-  COMBO_ENTER
+  COMBO_ENTER,
+  COMBO_LANG
 };
 
 void dance_ccp (tap_dance_state_t *state, void *user_data) {
@@ -117,6 +109,7 @@ const uint16_t PROGMEM combo2[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM combo3[] = {KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM combo4[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM combo5[] = {KC_L, KC_SEMICOLON, COMBO_END};
+const uint16_t PROGMEM combo6[] = {KC_X, KC_C, COMBO_END};
 
 combo_t key_combos[] = {
   [COMBO_ESC] = COMBO(combo1, KC_ESC),
@@ -124,40 +117,41 @@ combo_t key_combos[] = {
   [COMBO_ENTER] = COMBO(combo5, KC_ENT),
   [COMBO_TAB] = COMBO(combo2, KC_TAB),
   [COMBO_DEL] = COMBO(combo4, KC_DELETE),
+  [COMBO_LANG] = COMBO(combo6, KC_RALT),
 };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[_LAYER0] = LAYOUT(
+[L_DEF] = LAYOUT(
   __XX__,  KP_Q__,  KP_W__,  KP_E__,  KP_R__,  KP_T__,                      KP_Y__,  KP_U__,  KP_I__,  KP_O__,  KP_P__,  __XX__,
   __XX__,  MT_A__,  KP_S__,  KP_D__,  KP_F__,  KP_G__,                      KP_H__,  KP_J__,  KP_K__,  KP_L__,  MT_SMC,  __XX__,
   __XX__,  MT_Z__,  MT_X__,  MT_C__,  KP_V__,  KP_B__,  __XX__,    TD_COP,  KP_N__,  KP_M__,  MT_CMA,  MT_DOT,  MT_SLS,  __XX__,
                              KP_AU_,  KP_AD_,  KP_SPC,  MO_NUM,    MO_SYM,  LT_ENT,  KP_AL_,  KP_AR_
   ),
 
-[_LAYER1] = LAYOUT(
+[L_SYM] = LAYOUT(
   __XX__,  KP_EXC,  KP_AT_,  KP_HSH,  KP_DLR,  KP_PCT,                      KP_CRT,  KP_AMP,  KP_AST,  KP_UND,  KP_EQL,  __XX__,
   __XX__,  KP_SFT,  KP_GRV,  KP_TID,  TD_LPR,  KP_LBK,                      KP_RBK,  TD_RPR,  KP_PIP,  KP_BSL,  KP_SFT,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_APS,  KP_KMI,  __XX__,    CP_WRD,  KP_PLS,  KP_DQT,  KP_ALT,  KP_GUI,  KP_CTL,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  MO_CFG,    _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
-[_LAYER2] = LAYOUT(
+[L_NAV] = LAYOUT(
   __XX__,  __XX__,  KP_PSC,  KP_SLK,  KP_BRK,  KP_NLK,                      TD_7__,  TD_8__,  TD_9__,  TD_AST,  KP_MIN,  __XX__,
   __XX__,  KP_SFT,  __XX__,  __XX__,  KP_INS,  KP_HOM,                      TD_4__,  TD_5__,  TD_6__,  TD_SLS,  KP_PLS,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_DEL,  KP_END,  __XX__,    OS_SCP,  TD_1__,  TD_2__,  TD_3__,  TD_0__,  KP_DT_,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_,    MO_CFG,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
-[_LAYER3] = LAYOUT(
+[L_FNC] = LAYOUT(
   __XX__,  __XX__,  __XX__,  __XX__,  KP_END,  __XX__,                      KP_HOM,  KP_PUP,  __XX__,  __XX__,  __XX__,  __XX__,
   __XX__,  KP_SFT,  __XX__,  KP_PDN,  __XX__,  __XX__,                      KP_AL_,  KP_AD_,  KP_AU_,  KP_AR_,  __XX__,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  __XX__,  __XX__,  __XX__,    __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_,    _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
-[_LAYER4] = LAYOUT(
+[L_CFG] = LAYOUT(
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, AG_NORM,    AG_SWAP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
@@ -168,10 +162,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [0] = { ENCODER_CCW_CW(LCTL(LGUI(KC_LEFT)), LCTL(LGUI(KC_RIGHT))), ENCODER_CCW_CW(KC_NO, KC_NO) },
-    [1] = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(LSFT(KC_Z))),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
-    [2] = { ENCODER_CCW_CW(LCTL(LSFT(KC_TAB)), LCTL(KC_TAB)),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
-    [3] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
-    [4] = { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_NO, KC_NO) },
+  [L_DEF] = { ENCODER_CCW_CW(LCTL(LGUI(KC_LEFT)), LCTL(LGUI(KC_RIGHT))), ENCODER_CCW_CW(KC_NO, KC_NO) },
+  [L_SYM] = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(LSFT(KC_Z))),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
+  [L_NAV] = { ENCODER_CCW_CW(LCTL(LSFT(KC_TAB)), LCTL(KC_TAB)),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
+  [L_FNC] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
+  [L_CFG] = { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_NO, KC_NO) },
 };
 #endif
