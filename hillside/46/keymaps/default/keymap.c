@@ -86,19 +86,6 @@ void dance_rbkt (tap_dance_state_t *state, void *user_data) {
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-  // Tap once for Escape, twice for Caps Lock
-  [TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_KP_1, KC_F1),
-  [TD_2] = ACTION_TAP_DANCE_DOUBLE(KC_KP_2, KC_F2),
-  [TD_3] = ACTION_TAP_DANCE_DOUBLE(KC_KP_3, KC_F3),
-  [TD_4] = ACTION_TAP_DANCE_DOUBLE(KC_KP_4, KC_F4),
-  [TD_5] = ACTION_TAP_DANCE_DOUBLE(KC_KP_5, KC_F5),
-  [TD_6] = ACTION_TAP_DANCE_DOUBLE(KC_KP_6, KC_F6),
-  [TD_7] = ACTION_TAP_DANCE_DOUBLE(KC_KP_7, KC_F7),
-  [TD_8] = ACTION_TAP_DANCE_DOUBLE(KC_KP_8, KC_F8),
-  [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_KP_9, KC_F9),
-  [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_KP_0, KC_F10),
-  [TD_11] = ACTION_TAP_DANCE_DOUBLE(KC_PSLS, KC_F11),
-  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_PAST, KC_F12),
   [TD_CCP] = ACTION_TAP_DANCE_FN(dance_ccp),
   [TD_LBKT] = ACTION_TAP_DANCE_FN(dance_lbkt),
   [TD_RBKT] = ACTION_TAP_DANCE_FN(dance_rbkt),
@@ -138,9 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 [L_NAV] = LAYOUT(
-  __XX__,  __XX__,  KP_PSC,  KP_SLK,  KP_BRK,  KP_NLK,                      TD_7__,  TD_8__,  TD_9__,  TD_AST,  KP_MIN,  __XX__,
-  __XX__,  KP_SFT,  __XX__,  __XX__,  KP_INS,  KP_HOM,                      TD_4__,  TD_5__,  TD_6__,  TD_SLS,  KP_PLS,  __XX__,
-  __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_DEL,  KP_END,  __XX__,    OS_SCP,  TD_1__,  TD_2__,  TD_3__,  TD_0__,  KP_DT_,  __XX__,
+  __XX__,  __XX__,  KP_PSC,  KP_SLK,  KP_BRK,  KP_NLK,                      KP_7__,  KP_8__,  KP_9__,  KP_AST,  KP_MIN,  __XX__,
+  __XX__,  KP_SFT,  __XX__,  __XX__,  KP_INS,  KP_HOM,                      KP_4__,  KP_5__,  KP_6__,  KP_SLS,  KP_PLS,  __XX__,
+  __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_DEL,  KP_END,  __XX__,    OS_SCP,  KP_1__,  KP_2__,  KP_3__,  KP_DT_,  KP_0__,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_,    MO_CFG,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
@@ -152,10 +139,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 [L_CFG] = LAYOUT(
-  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, AG_NORM,    AG_SWAP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                       KC_NO, KC_NO, KC_NO, KC_TRNS,    KC_TRNS, KC_NO, KC_NO, KC_NO
+  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,                      KP_F7_,  KP_F8_,  KP_F9_,  KP_F12,  __XX__,  __XX__,
+  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,                      KP_F4_,  KP_F5_,  KP_F6_,  KP_F11,  __XX__,  __XX__,
+  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  AG_NOR,    AG_SWP,  KP_F1_,  KP_F2_,  KP_F3_,  KP_F10,  __XX__,  __XX__,
+                             __XX__,  __XX__,  __XX__,  _TRNS_,    _TRNS_,  __XX__,  __XX__,  __XX__
   )
 
 };

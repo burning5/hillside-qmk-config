@@ -22,6 +22,30 @@
 #define KP_N__ KC_N
 #define KP_M__ KC_M
 
+#define KP_1__ KC_KP_1
+#define KP_2__ KC_KP_2
+#define KP_3__ KC_KP_3
+#define KP_4__ KC_KP_4
+#define KP_5__ KC_KP_5
+#define KP_6__ KC_KP_6
+#define KP_7__ KC_KP_7
+#define KP_8__ KC_KP_8
+#define KP_9__ KC_KP_9
+#define KP_0__ KC_KP_0
+
+#define KP_F1_ KC_F1
+#define KP_F2_ KC_F2
+#define KP_F3_ KC_F3
+#define KP_F4_ KC_F4
+#define KP_F5_ KC_F5
+#define KP_F6_ KC_F6
+#define KP_F7_ KC_F7
+#define KP_F8_ KC_F8
+#define KP_F9_ KC_F9
+#define KP_F10 KC_F10
+#define KP_F11 KC_F11
+#define KP_F12 KC_F12
+
 #define KP_ESC KC_ESC
 #define KP_TAB KC_TAB
 #define KP_SPC KC_SPC
@@ -45,6 +69,8 @@
 #define KP_MIN KC_MINS
 #define KP_DQT KC_DQUO
 #define KP_PIP KC_PIPE
+#define KP_SLS KC_PSLS
+#define KP_AST KC_PAST
 
 #define KP_PSC KC_PSCR
 #define KP_SLK KC_SCRL
@@ -89,23 +115,9 @@
 #define MT_SLS LCTL_T(KC_SLSH)
 
 // tap dances
-#define TD_1__ TD(TD_1)
-#define TD_2__ TD(TD_2)
-#define TD_3__ TD(TD_3)
-#define TD_4__ TD(TD_4)
-#define TD_5__ TD(TD_5)
-#define TD_6__ TD(TD_6)
-#define TD_7__ TD(TD_7)
-#define TD_8__ TD(TD_8)
-#define TD_9__ TD(TD_9)
-#define TD_0__ TD(TD_10)
-#define TD_SLS TD(TD_11)
-#define TD_AST TD(TD_12)
-
 #define TD_COP TD(TD_CCP)
 #define TD_LPR TD(TD_LBKT)
 #define TD_RPR TD(TD_RBKT)
-#define TD_JJ_ TD(TD_JJ)
 
 // layers
 #define MO_SYM MO(1)
@@ -117,3 +129,5 @@
 // quantum
 #define __XX__ KC_NO
 #define _TRNS_ KC_TRNS
+#define AG_NOR AG_NORM
+#define AG_SWP AG_SWAP
