@@ -70,7 +70,6 @@
 #define KP_DQT KC_DQUO
 #define KP_PIP KC_PIPE
 #define KP_SLS KC_PSLS
-#define KP_AST KC_PAST
 
 #define KP_PSC KC_PSCR
 #define KP_SLK KC_SCRL
