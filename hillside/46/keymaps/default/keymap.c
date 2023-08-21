@@ -140,8 +140,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_CFG] = LAYOUT(
   __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,                      KP_F7_,  KP_F8_,  KP_F9_,  KP_F12,  __XX__,  __XX__,
-  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,                      KP_F4_,  KP_F5_,  KP_F6_,  KP_F11,  __XX__,  __XX__,
-  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  AG_NOR,    AG_SWP,  KP_F1_,  KP_F2_,  KP_F3_,  KP_F10,  __XX__,  __XX__,
+  __XX__,  KP_SFT,  __XX__,  __XX__,  __XX__,  __XX__,                      KP_F4_,  KP_F5_,  KP_F6_,  KP_F11,  __XX__,  __XX__,
+  __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  __XX__,  __XX__,  AG_NOR,    AG_SWP,  KP_F1_,  KP_F2_,  KP_F3_,  KP_F10,  __XX__,  __XX__,
                              __XX__,  __XX__,  __XX__,  _TRNS_,    _TRNS_,  __XX__,  __XX__,  __XX__
   )
 
