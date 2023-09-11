@@ -8,21 +8,10 @@
 
 // Tap Dance declarations
 enum {
-  TD_1,
-  TD_2,
-  TD_3,
-  TD_4,
-  TD_5,
-  TD_6,
-  TD_7,
-  TD_8,
-  TD_9,
-  TD_10,
-  TD_11,
-  TD_12,
   TD_CCP,
   TD_LBKT,
   TD_RBKT,
+  TD_LANG,
 };
 
 enum {
@@ -35,53 +24,63 @@ enum {
 };
 
 void dance_ccp (tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-      register_code(KC_LCTL);
-      tap_code(KC_V);
-      unregister_code(KC_LCTL);
-    } else if (state->count == 2) {
-      register_code(KC_LCTL);
-      tap_code(KC_C);
-      unregister_code(KC_LCTL);
-    } else if (state->count == 3) {
-      register_code(KC_LCTL);
-      tap_code(KC_X);
-      unregister_code(KC_LCTL);
-    } else {
-      reset_tap_dance (state);
-    }
+  if (state->count == 1) {
+    register_code(KC_LCTL);
+    tap_code(KC_V);
+    unregister_code(KC_LCTL);
+  } else if (state->count == 2) {
+    register_code(KC_LCTL);
+    tap_code(KC_C);
+    unregister_code(KC_LCTL);
+  } else if (state->count == 3) {
+    register_code(KC_LCTL);
+    tap_code(KC_X);
+    unregister_code(KC_LCTL);
+  } else {
+    reset_tap_dance (state);
+  }
 }
 
 void dance_lbkt (tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-      register_code(KC_LSFT);
-      tap_code(KC_9);
-      unregister_code(KC_LSFT);
-    } else if (state->count == 2) {
-      register_code(KC_LSFT);
-      tap_code(KC_LEFT_BRACKET);
-      unregister_code(KC_LSFT);
-    } else if (state->count == 3) {
-      tap_code(KC_LEFT_BRACKET);
-    } else {
-      reset_tap_dance (state);
-    }
+  if (state->count == 1) {
+    register_code(KC_LSFT);
+    tap_code(KC_9);
+    unregister_code(KC_LSFT);
+  } else if (state->count == 2) {
+    register_code(KC_LSFT);
+    tap_code(KC_LEFT_BRACKET);
+    unregister_code(KC_LSFT);
+  } else if (state->count == 3) {
+    tap_code(KC_LEFT_BRACKET);
+  } else {
+    reset_tap_dance (state);
+  }
 }
 
 void dance_rbkt (tap_dance_state_t *state, void *user_data) {
-    if (state->count == 1) {
-      register_code(KC_LSFT);
-      tap_code(KC_0);
-      unregister_code(KC_LSFT);
-    } else if (state->count == 2) {
-      register_code(KC_RSFT);
-      tap_code(KC_RIGHT_BRACKET);
-      unregister_code(KC_RSFT);
-    } else if (state->count == 3) {
-      tap_code(KC_RIGHT_BRACKET);
-    } else {
-      reset_tap_dance (state);
-    }
+  if (state->count == 1) {
+    register_code(KC_LSFT);
+    tap_code(KC_0);
+    unregister_code(KC_LSFT);
+  } else if (state->count == 2) {
+    register_code(KC_RSFT);
+    tap_code(KC_RIGHT_BRACKET);
+    unregister_code(KC_RSFT);
+  } else if (state->count == 3) {
+    tap_code(KC_RIGHT_BRACKET);
+  } else {
+    reset_tap_dance (state);
+  }
+}
+
+void dance_lang(tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+    tap_code(KP_SPC);
+  } else if (state->count == 2) {
+    tap_code(KC_RALT);
+  } else {
+    reset_tap_dance (state);
+  }
 }
 
 // Tap Dance definitions
@@ -89,6 +88,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_CCP] = ACTION_TAP_DANCE_FN(dance_ccp),
   [TD_LBKT] = ACTION_TAP_DANCE_FN(dance_lbkt),
   [TD_RBKT] = ACTION_TAP_DANCE_FN(dance_rbkt),
+  [TD_LANG] = ACTION_TAP_DANCE_FN(dance_lang),
 };
 
 const uint16_t PROGMEM combo1[] = {KC_W, KC_E, COMBO_END};
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   __XX__,  KP_Q__,  KP_W__,  KP_E__,  KP_R__,  KP_T__,                      KP_Y__,  KP_U__,  KP_I__,  KP_O__,  KP_P__,  __XX__,
   __XX__,  MT_A__,  KP_S__,  KP_D__,  KP_F__,  KP_G__,                      KP_H__,  KP_J__,  KP_K__,  KP_L__,  MT_SMC,  __XX__,
   __XX__,  MT_Z__,  MT_X__,  MT_C__,  KP_V__,  KP_B__,  __XX__,    TD_COP,  KP_N__,  KP_M__,  MT_CMA,  MT_DOT,  MT_SLS,  __XX__,
-                             KP_AU_,  KP_AD_,  KP_SPC,  MO_NUM,    MO_SYM,  LT_ENT,  KP_AL_,  KP_AR_
+                             KP_AU_,  KP_AD_,  TD_LAN,  MO_NUM,    MO_SYM,  LT_ENT,  KP_AL_,  KP_AR_
   ),
 
 [L_SYM] = LAYOUT(
@@ -144,7 +144,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  __XX__,  __XX__,  AG_NOR,    AG_SWP,  KP_F1_,  KP_F2_,  KP_F3_,  KP_F10,  __XX__,  __XX__,
                              __XX__,  __XX__,  __XX__,  _TRNS_,    _TRNS_,  __XX__,  __XX__,  __XX__
   )
-
 };
 
 #if defined(ENCODER_MAP_ENABLE)
