@@ -130,4 +130,4 @@
 #define __XX__ KC_NO
 #define _TRNS_ KC_TRNS
 #define AG_NOR AG_NORM
-#define AG_SWP AG_SWAP
+#define AG_TOG AG_TOGG
