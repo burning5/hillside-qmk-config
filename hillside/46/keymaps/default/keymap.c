@@ -113,7 +113,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_DEF] = LAYOUT(
   __XX__,  KP_Q__,  KP_W__,  KP_E__,  KP_R__,  KP_T__,                      KP_Y__,  KP_U__,  KP_I__,  KP_O__,  KP_P__,  __XX__,
   __XX__,  MT_A__,  KP_S__,  KP_D__,  KP_F__,  KP_G__,                      KP_H__,  KP_J__,  KP_K__,  KP_L__,  MT_SMC,  __XX__,
-  __XX__,  MT_Z__,  MT_X__,  MT_C__,  KP_V__,  KP_B__,  __XX__,    TD_COP,  KP_N__,  KP_M__,  MT_CMA,  MT_DOT,  MT_SLS,  __XX__,
+  __XX__,  MT_Z__,  MT_X__,  MT_C__,  KP_V__,  KP_B__,  TD_COP,    TD_COP,  KP_N__,  KP_M__,  MT_CMA,  MT_DOT,  MT_SLS,  __XX__,
                              KP_AU_,  KP_AD_,  TD_LAN,  MO_NUM,    MO_SYM,  LT_ENT,  KP_AL_,  KP_AR_
   ),
 
