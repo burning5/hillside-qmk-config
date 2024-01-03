@@ -113,6 +113,9 @@
 #define MT_DOT LGUI_T(KC_DOT)
 #define MT_SLS LCTL_T(KC_SLSH)
 
+#define KP_LVD LGUI(LCTL(KC_LEFT))
+#define KP_RVD LGUI(LCTL(KC_RIGHT))
+
 // tap dances
 #define TD_COP TD(TD_CCP)
 #define TD_LPR TD(TD_LBKT)
@@ -122,6 +125,7 @@
 // layers
 #define MO_SYM MO(1)
 #define MO_NUM MO(2)
+#define MO_NAV MO(3)
 #define MO_CFG MO(4)
 
 #define LT_ENT LT(3,KC_ENT)

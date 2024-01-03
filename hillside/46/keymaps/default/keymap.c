@@ -2,8 +2,8 @@
 
 #define L_DEF 0
 #define L_SYM 1
-#define L_NAV 2
-#define L_FNC 3
+#define L_NUM 2
+#define L_NAV 3
 #define L_CFG 4
 
 // Tap Dance declarations
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   __XX__,  KP_Q__,  KP_W__,  KP_E__,  KP_R__,  KP_T__,                      KP_Y__,  KP_U__,  KP_I__,  KP_O__,  KP_P__,  __XX__,
   __XX__,  MT_A__,  KP_S__,  KP_D__,  KP_F__,  KP_G__,                      KP_H__,  KP_J__,  KP_K__,  KP_L__,  MT_SMC,  __XX__,
   __XX__,  MT_Z__,  MT_X__,  MT_C__,  KP_V__,  KP_B__,  TD_COP,    TD_COP,  KP_N__,  KP_M__,  MT_CMA,  MT_DOT,  MT_SLS,  __XX__,
-                             KP_AU_,  KP_AD_,  TD_LAN,  MO_NUM,    MO_SYM,  LT_ENT,  KP_AL_,  KP_AR_
+                             KP_AU_,  KP_LVD,  TD_LAN,  MO_NUM,    MO_SYM,  LT_ENT,  KP_RVD,  KP_AR_
   ),
 
 [L_SYM] = LAYOUT(
@@ -124,14 +124,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              _TRNS_,  _TRNS_,  _TRNS_,  MO_CFG,    _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
-[L_NAV] = LAYOUT(
+[L_NUM] = LAYOUT(
   __XX__,  __XX__,  KP_PSC,  KP_SLK,  KP_BRK,  KP_NLK,                      KP_7__,  KP_8__,  KP_9__,  KP_AST,  KP_MIN,  __XX__,
   __XX__,  KP_SFT,  __XX__,  __XX__,  KP_INS,  KP_HOM,                      KP_4__,  KP_5__,  KP_6__,  KP_SLS,  KP_PLS,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  KP_DEL,  KP_END,  __XX__,    OS_SCP,  KP_1__,  KP_2__,  KP_3__,  KP_DT_,  KP_0__,  __XX__,
                              _TRNS_,  _TRNS_,  _TRNS_,  _TRNS_,    MO_CFG,  _TRNS_,  _TRNS_,  _TRNS_
   ),
 
-[L_FNC] = LAYOUT(
+[L_NAV] = LAYOUT(
   __XX__,  __XX__,  __XX__,  __XX__,  KP_END,  __XX__,                      KP_HOM,  KP_PUP,  __XX__,  __XX__,  __XX__,  __XX__,
   __XX__,  KP_SFT,  __XX__,  KP_PDN,  __XX__,  __XX__,                      KP_AL_,  KP_AD_,  KP_AU_,  KP_AR_,  __XX__,  __XX__,
   __XX__,  KP_CTL,  KP_GUI,  KP_ALT,  __XX__,  __XX__,  __XX__,    __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,  __XX__,
@@ -150,8 +150,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
   [L_DEF] = { ENCODER_CCW_CW(LCTL(LGUI(KC_LEFT)), LCTL(LGUI(KC_RIGHT))), ENCODER_CCW_CW(KC_NO, KC_NO) },
   [L_SYM] = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(LSFT(KC_Z))),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
-  [L_NAV] = { ENCODER_CCW_CW(LCTL(LSFT(KC_TAB)), LCTL(KC_TAB)),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
-  [L_FNC] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
+  [L_NUM] = { ENCODER_CCW_CW(LCTL(LSFT(KC_TAB)), LCTL(KC_TAB)),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
+  [L_NAV] = { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN),  ENCODER_CCW_CW(KC_NO, KC_NO)  },
   [L_CFG] = { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_NO, KC_NO) },
 };
 #endif
